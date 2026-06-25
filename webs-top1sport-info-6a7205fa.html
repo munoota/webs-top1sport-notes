@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top1体育 – 稳定聚合 信息直达</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fae1d1 0%, #f7cbb7 40%, #efb8a1 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* —— 主卡片 —— */
+        .card {
+            background: #fffffffa;
+            backdrop-filter: blur(2px);
+            border-radius: 48px 48px 32px 32px;
+            box-shadow: 0 20px 40px -12px rgba(150, 70, 30, 0.28),
+                        0 8px 20px rgba(0,0,0,0.04);
+            padding: 2.8rem 2.4rem;
+            transition: box-shadow 0.25s;
+        }
+
+        /* —— hero —— */
+        .hero {
+            text-align: center;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid #f3dfd4;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #592b1a;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #7a4f3c;
+            padding: 0 0.8rem;
+            line-height: 1.6;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .hero .sub a {
+            color: #8d3f1f;
+            text-decoration: none;
+            font-weight: 550;
+            background: #fcebe3;
+            padding: 0.1rem 0.5rem;
+            border-radius: 30px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .hero .sub a:hover {
+            background: #d6805f;
+            color: #fff;
+        }
+
+        /* —— 优势网格 —— */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.8rem 1.2rem;
+            margin: 2.6rem 0 2rem;
+        }
+
+        .feat-item {
+            background: #fcf4ef;
+            border-radius: 28px;
+            padding: 1.6rem 1.2rem 1.2rem;
+            transition: transform 0.15s ease, box-shadow 0.15s;
+            box-shadow: 0 2px 6px rgba(120, 50, 20, 0.04);
+        }
+
+        .feat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -10px #b0725790;
+        }
+
+        .feat-item .icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .feat-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #3d2217;
+            margin: 0.3rem 0 0.5rem;
+        }
+
+        .feat-item p {
+            color: #5c3f31;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* —— 说明区 —— */
+        .describe {
+            background: #fcf3ed;
+            border-radius: 32px;
+            padding: 1.8rem 2rem;
+            margin: 1.6rem 0 2.2rem;
+        }
+
+        .describe h2 {
+            font-size: 1.4rem;
+            font-weight: 550;
+            color: #4d2a1b;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .describe p {
+            color: #402e25;
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .describe p:last-child {
+            margin-bottom: 0;
+        }
+
+        .describe strong {
+            color: #833f22;
+        }
+
+        /* —— FAQ 摘要 —— */
+        .faq-mini {
+            margin: 2.2rem 0 1.4rem;
+            border-top: 1px dashed #dbb9a9;
+            padding-top: 1.8rem;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            color: #4a2b1d;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .faq-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-q {
+            flex: 1 1 180px;
+            font-weight: 550;
+            color: #612f1b;
+            font-size: 0.95rem;
+        }
+
+        .faq-a {
+            flex: 2 1 260px;
+            color: #4f372b;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .faq-a a {
+            color: #964b28;
+            text-decoration: underline wavy #dbb19d 1px;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .faq-a a:hover {
+            text-decoration-color: #823918;
+            color: #632b12;
+        }
+
+        /* —— 底部链接 —— */
+        .footer-links {
+            margin-top: 2rem;
+            text-align: center;
+            padding: 1rem 0 0.4rem;
+            border-top: 1px solid #efd9ce;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem 1.8rem;
+        }
+
+        .footer-links a {
+            color: #633b27;
+            text-decoration: none;
+            font-size: 0.98rem;
+            font-weight: 480;
+            background: #f8e4da;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            transition: background 0.2s, color 0.15s;
+            border: 1px solid transparent;
+        }
+
+        .footer-links a:hover {
+            background: #dba78b;
+            color: #24130b;
+            border-color: #c28465;
+        }
+
+        .footer-meta {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #7a5d4d;
+            letter-spacing: 0.02em;
+        }
+
+        /* —— 响应式 —— */
+        @media (max-width: 640px) {
+            .card {
+                padding: 2rem 1.2rem;
+                border-radius: 32px;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .features-grid {
+                gap: 1.2rem;
+            }
+            .feat-item {
+                padding: 1.2rem 0.8rem;
+            }
+            .describe {
+                padding: 1.4rem 1rem;
+            }
+            .faq-row {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+            .footer-links a {
+                padding: 0.25rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero .sub {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <div class="card">
+
+        <!-- hero 区 -->
+        <div class="hero">
+            <h1>top1体育 · 信息聚合</h1>
+            <div class="sub">
+                一个持续更新的内容索引，聚焦体育相关资源与动态。<br>
+                稳定入口：<a href="https://webs-top1sport.com">top1体育</a> 页面结构简洁，方便快速定位。
+            </div>
+        </div>
+
+        <!-- 优势区 -->
+        <div class="features-grid">
+            <div class="feat-item">
+                <span class="icon">📋</span>
+                <h3>清晰索引</h3>
+                <p>内容按主题归类，减少反复跳转，信息层级一目了然。</p>
+            </div>
+            <div class="feat-item">
+                <span class="icon">🔄</span>
+                <h3>定期更新</h3>
+                <p>站点维护较稳定，内容随赛历或热点做对应补充与调整。</p>
+            </div>
+            <div class="feat-item">
+                <span class="icon">🔗</span>
+                <h3>精简链接</h3>
+                <p>每个资源位都经过筛选，避免冗余链接堆砌，提升浏览效率。</p>
+            </div>
+            <div class="feat-item">
+                <span class="icon">🧭</span>
+                <h3>导航直接</h3>
+                <p>从首页到分页路径清晰，适合日常快速查阅体育相关内容。</p>
+            </div>
+        </div>
+
+        <!-- 说明区（侧重页面结构说明） -->
+        <div class="describe">
+            <h2>📌 页面说明 · 从稳定入口理解结构</h2>
+            <p>
+                <strong>top1体育</strong> 站点采用卡片式内容布局，首页主要展示分类导览与近期条目。
+                每个板块都带有简要标题与描述，使用者可以依据自身兴趣直接选择对应模块。
+                无论是赛程追踪、运动知识还是资讯汇总，都尽量保持一致的层级深度，避免迷失在多层菜单中。
+            </p>
+            <p>
+                为了提升信息密度，页面中适当使用了标签与简短注释，在有限空间内呈现更多上下文。
+                作为聚合型页面，<strong>top1体育</strong> 不堆砌无关内容，而是围绕体育主题做收敛。
+                如果你需要快速浏览或查找某项运动的相关资源，可以直接从首页索引进入对应分类。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <h3>⚡ 常见疑问摘要</h3>
+
+            <div class="faq-row">
+                <div class="faq-q">页面内容更新频率？</div>
+                <div class="faq-a">根据赛事周期与信息源变化，通常每1~2周做一次内容同步。建议直接访问 <a href="https://webs-top1sport.com">top1体育</a> 首页查看最新条目。</div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-q">是否包含外部链接？</div>
+                <div class="faq-a">部分条目会引用外部信息或资源，链接前均有说明标注。所有外链均经过基础可用性确认，但页面本身以索引介绍为主。</div>
+            </div>
+
+            <div class="faq-row">
+                <div class="faq-q">移动端浏览效果如何？</div>
+                <div class="faq-a">页面已做响应式适配，在手机与平板上保持可读性与基本操作流畅度。部分筛选功能建议在宽屏下使用。</div>
+            </div>
+        </div>
+
+        <!-- 底部链接区 -->
+        <div class="footer-links">
+            <a href="https://webs-top1sport.com">top1体育</a>
+            <a href="https://webs-top1sport.com">top1体育</a>
+            <a href="https://webs-top1sport.com">top1体育</a>
+            <a href="https://webs-top1sport.com">top1体育</a>
+        </div>
+        <div class="footer-meta">
+            基于稳定入口 · 信息聚合 · 页面结构持续优化
+        </div>
+    </div>
+</div>
+</body>
+</html>
